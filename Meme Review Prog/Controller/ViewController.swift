@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        view.backgroundColor = .yellow
+        view.backgroundColor = #colorLiteral(red: 0.9013727119, green: 0.897710084, blue: 0.9449579832, alpha: 1)
         for element in mainStoryboard.getViews() {
             view.addSubview(element)
         }
@@ -23,13 +23,13 @@ class ViewController: UIViewController {
     }
     
     func setupLayout() {
-        mainStoryboard.memeImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        mainStoryboard.memeImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        mainStoryboard.memeImageView.widthAnchor.constraint(equalToConstant: 200)
-        mainStoryboard.memeImageView.heightAnchor.constraint(equalToConstant: 200)
+        mainStoryboard.memeImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        mainStoryboard.memeImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        mainStoryboard.memeImageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        mainStoryboard.memeImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         
-        mainStoryboard.appTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        mainStoryboard.appTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30)
+        mainStoryboard.appTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        mainStoryboard.appTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
     }
 
 
