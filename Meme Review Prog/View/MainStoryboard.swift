@@ -32,7 +32,7 @@ struct MainStoryboard {
         let label = UILabel()
         label.text = "Meme Name"
         label.textAlignment = .center
-        label.font = UIFont(name: "AvenirNext-Medium", size: 21)
+        label.font = UIFont(name: "AvenirNext-Bold", size: 21)
         label.textColor = #colorLiteral(red: 0.1789666667, green: 0.1716, blue: 0.26, alpha: 1)
         return label
     }()
@@ -50,7 +50,7 @@ struct MainStoryboard {
         let label = UILabel()
         label.text = "MEME LEVEL"
         label.textAlignment = .left
-        label.font = UIFont(name: "AvenirNext-UltraLight", size: 17)
+        label.font = UIFont(name: "AvenirNext-Regular", size: 17)
         label.textColor = #colorLiteral(red: 0.1789666667, green: 0.1716, blue: 0.26, alpha: 1)
         return label
     }()
