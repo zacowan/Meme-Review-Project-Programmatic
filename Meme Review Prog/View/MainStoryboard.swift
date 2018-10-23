@@ -64,7 +64,7 @@ struct MainStoryboard {
     }()
     
     public let nextMemeButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.setTitle("Next Meme", for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.3568627451, green: 0.3176470588, blue: 0.8235294118, alpha: 1)
         button.titleLabel?.font = UIFont(name: "AvenirNext-Bold", size: 17)

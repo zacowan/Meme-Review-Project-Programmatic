@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     let mainStoryboard = MainStoryboard()
+    let memeReview = MemeReview(withMemes: ["Dos Equis", "Drunk Baby", "Football", "Frozone", "Shaq", "Office"])
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,35 @@ class ViewController: UIViewController {
             view.addSubview(element)
         }
         setupLayout()
+        updateMeme()
+        mainStoryboard.nextMemeButton.addTarget(self, action: #selector(nextMemeButtonPressed), for: .touchUpInside)
+        mainStoryboard.newScoreSlider.addTarget(self, action: #selector(sliderMoved), for: .touchDragInside)
+    }
+    
+    @objc private func nextMemeButtonPressed() {
+        memeReview.nextMeme(newScore: Int(mainStoryboard.newScoreSlider.value))
+        updateMeme()
+    }
+    
+    @objc private func sliderMoved() {
+        updateNewScoreLabel()
+    }
+    
+    private func updateMeme() {
+        let meme = memeReview.getMeme()
+        let memeName = meme.getName()
+        let memeScore = meme.getScore()
+        
+        mainStoryboard.memeNameLabel.text = memeName
+        mainStoryboard.memeScoreLabel.text = "Score: \(memeScore)/10"
+        mainStoryboard.memeImageView.image = UIImage(named: memeName)
+        mainStoryboard.newScoreSlider.value = Float(memeScore)
+        mainStoryboard.memeLevelLabel.text = meme.getMemeLevel()
+        updateNewScoreLabel()
+    }
+    
+    private func updateNewScoreLabel() {
+        mainStoryboard.memeNewScoreLabel.text = "New Score: \(Int(mainStoryboard.newScoreSlider.value))/10"
     }
     
     private func setupLayout() {
