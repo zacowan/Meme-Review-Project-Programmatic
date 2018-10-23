@@ -11,14 +11,14 @@ import UIKit
 
 struct MainStoryboard {
     
-    let memeImageView: UIImageView = {
+    public let memeImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 20
         imageView.backgroundColor = #colorLiteral(red: 0.1789666667, green: 0.1716, blue: 0.26, alpha: 1)
         return imageView
     }()
     
-    let appTitleLabel: UILabel = {
+    public let appTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Meme Review"
         label.textAlignment = .center
@@ -27,7 +27,7 @@ struct MainStoryboard {
         return label
     }()
     
-    let memeNameLabel: UILabel = {
+    public let memeNameLabel: UILabel = {
         let label = UILabel()
         label.text = "Meme Name"
         label.textAlignment = .center
@@ -36,34 +36,34 @@ struct MainStoryboard {
         return label
     }()
     
-    let memeScoreLabel: UILabel = {
+    public let memeScoreLabel: UILabel = {
         let label = UILabel()
         label.text = "Score: nil"
         label.textAlignment = .right
-        label.font = UIFont(name: "AvenirNext-Black", size: 14)
+        label.font = UIFont(name: "AvenirNext-Heavy", size: 14)
         label.textColor = #colorLiteral(red: 0.1789666667, green: 0.1716, blue: 0.26, alpha: 1)
         return label
     }()
     
-    let memeLevelLabel: UILabel = {
+    public let memeLevelLabel: UILabel = {
         let label = UILabel()
         label.text = "MEME LEVEL"
         label.textAlignment = .left
-        label.font = UIFont(name: "AvenirNext-UltraLight", size: 14)
+        label.font = UIFont(name: "AvenirNext-UltraLight", size: 17)
         label.textColor = #colorLiteral(red: 0.1789666667, green: 0.1716, blue: 0.26, alpha: 1)
         return label
     }()
     
-    let memeNewScoreLabel: UILabel = {
+    public let memeNewScoreLabel: UILabel = {
         let label = UILabel()
         label.text = "New Score: nil"
         label.textAlignment = .left
-        label.font = UIFont(name: "AvenirNext-Black", size: 14)
+        label.font = UIFont(name: "AvenirNext-Heavy", size: 14)
         label.textColor = #colorLiteral(red: 0.1789666667, green: 0.1716, blue: 0.26, alpha: 1)
         return label
     }()
     
-    let nextMemeButton: UIButton = {
+    public let nextMemeButton: UIButton = {
         let button = UIButton()
         button.setTitle("Next Meme", for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.3568627451, green: 0.3176470588, blue: 0.8235294118, alpha: 1)
@@ -73,7 +73,7 @@ struct MainStoryboard {
         return button
     }()
     
-    let newScoreSlider: UISlider = {
+    public let newScoreSlider: UISlider = {
         let slider = UISlider()
         slider.minimumValue = 0
         slider.maximumValue = 10
@@ -85,7 +85,7 @@ struct MainStoryboard {
     }()
     
     public func getViews() -> [UIView] {
-        let elements: [UIView] = [memeImageView, appTitleLabel, memeNameLabel]
+        let elements: [UIView] = [memeImageView, appTitleLabel, memeNameLabel, memeScoreLabel, memeLevelLabel, memeNewScoreLabel, nextMemeButton, newScoreSlider]
         for element in elements {
             element.translatesAutoresizingMaskIntoConstraints = false
         }

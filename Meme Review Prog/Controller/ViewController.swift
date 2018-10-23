@@ -22,14 +22,43 @@ class ViewController: UIViewController {
         setupLayout()
     }
     
-    func setupLayout() {
-        mainStoryboard.memeImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    private func setupLayout() {
+        // Meme Image
         mainStoryboard.memeImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        mainStoryboard.memeImageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        mainStoryboard.memeImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        mainStoryboard.memeImageView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 60).isActive = true
+        mainStoryboard.memeImageView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -60).isActive = true
+        mainStoryboard.memeImageView.heightAnchor.constraint(equalTo: mainStoryboard.memeImageView.widthAnchor).isActive = true
         
+        // App Title
         mainStoryboard.appTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         mainStoryboard.appTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
+        
+        // Meme Name
+        mainStoryboard.memeNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        mainStoryboard.memeNameLabel.bottomAnchor.constraint(equalTo: mainStoryboard.memeImageView.topAnchor, constant: -40).isActive = true
+        
+        // Meme Score
+        mainStoryboard.memeScoreLabel.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -60).isActive = true
+        mainStoryboard.memeScoreLabel.bottomAnchor.constraint(equalTo: mainStoryboard.memeImageView.topAnchor, constant: -10).isActive = true
+        
+        // Meme Level
+        mainStoryboard.memeLevelLabel.bottomAnchor.constraint(equalTo: mainStoryboard.memeImageView.topAnchor, constant: -10).isActive = true
+        mainStoryboard.memeLevelLabel.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 60).isActive = true
+        
+        // New Meme Score
+        mainStoryboard.memeNewScoreLabel.topAnchor.constraint(equalTo: mainStoryboard.memeImageView.bottomAnchor, constant: 10).isActive = true
+        mainStoryboard.memeNewScoreLabel.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 60).isActive = true
+        
+        // New Score Slider
+        mainStoryboard.newScoreSlider.topAnchor.constraint(equalTo: mainStoryboard.memeNewScoreLabel.bottomAnchor, constant: 10).isActive = true
+        mainStoryboard.newScoreSlider.leftAnchor.constraint(equalTo: mainStoryboard.memeImageView.leftAnchor).isActive = true
+        mainStoryboard.newScoreSlider.rightAnchor.constraint(equalTo: mainStoryboard.memeImageView.rightAnchor).isActive = true
+        
+        // Next Meme Button
+        mainStoryboard.nextMemeButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 60).isActive = true
+        mainStoryboard.nextMemeButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -60).isActive = true
+        mainStoryboard.nextMemeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        mainStoryboard.nextMemeButton.heightAnchor.constraint(equalToConstant: 70).isActive = true
     }
 
 
