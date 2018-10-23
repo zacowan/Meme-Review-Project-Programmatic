@@ -14,6 +14,7 @@ struct MainStoryboard {
     public let memeImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 20
+        imageView.clipsToBounds = true
         imageView.backgroundColor = #colorLiteral(red: 0.1789666667, green: 0.1716, blue: 0.26, alpha: 1)
         return imageView
     }()
