@@ -21,7 +21,7 @@ struct MainStoryboard {
     
     public let appTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Meme Review"
+        label.text = "Meme Review P"
         label.textAlignment = .center
         label.font = UIFont(name: "AvenirNext-Medium", size: 36)
         label.textColor = #colorLiteral(red: 0.1789666667, green: 0.1716, blue: 0.26, alpha: 1)
